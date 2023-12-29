@@ -16,5 +16,5 @@ app.get('/', (req,res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Listening at port ${PORT}`)
+    console.log(`NimbusNote backend listening at http://localhost:${PORT}`);
 })
