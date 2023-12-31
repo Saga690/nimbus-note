@@ -5,7 +5,7 @@ const NoteState = (props) => {
 
     const notesInitial = [
         {
-            "_id": "658eba00e563d48f7dcc9a38",
+            "_id": "658eba00e563d48f7dcc9a381",
             "user": "658dabb4ac3a080329094358",
             "title": "My Title updated",
             "description": "Start CP updated",
@@ -86,8 +86,9 @@ const NoteState = (props) => {
         setNotes(notes.concat(note));
     }
 
-    const deleteNote = () => {
-
+    const deleteNote = (id) => {
+        const newNotes = notes.filter((note) => {return note._id!==id});
+        setNotes(newNotes);
     }
 
     const editNote = () => {
