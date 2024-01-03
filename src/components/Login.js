@@ -21,8 +21,8 @@ const Login = (props) => {
         console.log(json);
         if (json.success) {
             localStorage.setItem('token', json.authToken);
-            navigate("/");
             props.showAlert("Logged In Successfully", "success");
+            navigate("/");
         }
         else {
             props.showAlert("Invalid Details", "danger");
@@ -34,18 +34,21 @@ const Login = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="email" name="email" onChange={onChange} value={credentials.email} aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="password" className="form-label">Password</label>
-                <input type="password" className="form-control" name="password" onChange={onChange} value={credentials.password} id="password" />
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+        <div className='mt-4'>
+            <h2 className='my-5'>Login to continue to Nimbus Note</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="email" name="email" onChange={onChange} value={credentials.email} aria-describedby="emailHelp" />
+                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input type="password" className="form-control" name="password" onChange={onChange} value={credentials.password} id="password" />
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+        </div>
     )
 }
 

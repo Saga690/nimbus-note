@@ -41,7 +41,8 @@ const Signup = (props) => {
     }
 
     return (
-        <div className='container'>
+        <div className='container mt-4'>
+            <h2 className='my-5'>Create an account on Nimbus Note</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>
